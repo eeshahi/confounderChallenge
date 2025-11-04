@@ -84,7 +84,7 @@ dreamy_mean = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']['post_surg
 duck_mean = patients_df[patients_df['doctor_name'] == 'Doc Duck']['post_surgical_score'].mean()
 
 # Create figure with professional styling
-fig, ax = plt.subplots(figsize=(12, 7))
+fig, ax = plt.subplots(figsize=(10, 5))
 
 # Separate data by doctor
 dreamy_data = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']
@@ -229,15 +229,12 @@ patients_randomized_df.head()
 ```{python}
 #| label: load-data-randomized-python
 #| echo: false
+#| output: false
 
 import pandas as pd
 
 # Load the randomized data
 patients_randomized_df = pd.read_csv('patients_data_randomized.csv')
-
-# Display first few rows
-print(f"Number of randomized patients: {len(patients_randomized_df)}")
-patients_randomized_df.head()
 ```
 
 @fig-plot-outcomes-randomized shows the post-surgical symptom score for 100 patients under randomized assignment. Doc Duck's average post-surgical symptom score is 2.71 while Doc Dreamy's average is 3.46. Doc Duck performs better since lower scores indicate better outcomes. With randomization breaking the confounding relationship, we can now properly assess the causal effect. A two-sample t-test reveals a statistically significant difference (t = 2.734, p = 0.007).  **Not only is Dr. Dreamy not the better surgeon, he is actually the worse surgeon!**
@@ -255,7 +252,7 @@ dreamy_mean = patients_randomized_df[patients_randomized_df['doctor_name'] == 'D
 duck_mean = patients_randomized_df[patients_randomized_df['doctor_name'] == 'Doc Duck']['post_surgical_score'].mean()
 
 # Create figure with professional styling
-fig, ax = plt.subplots(figsize=(12, 7))
+fig, ax = plt.subplots(figsize=(10, 5))
 
 # Separate data by doctor
 dreamy_data = patients_randomized_df[patients_randomized_df['doctor_name'] == 'Doc Dreamy']
@@ -325,7 +322,7 @@ dreamy_mean = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']['post_surg
 duck_mean = patients_df[patients_df['doctor_name'] == 'Doc Duck']['post_surgical_score'].mean()
 
 # Create figure with professional styling
-fig, ax = plt.subplots(figsize=(12, 7))
+fig, ax = plt.subplots(figsize=(10, 5))
 
 # Separate data by doctor
 dreamy_data = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']

@@ -101,7 +101,7 @@ window.Quarto = {
 <div id="fig-plot-outcomes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-outcomes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-plot-outcomes-output-1.png" width="1143" height="661" class="figure-img">
+<img src="index_files/figure-html/fig-plot-outcomes-output-1.png" width="951" height="469" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-outcomes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Post-Surgical Symptom Score (lower is better) - Observed Data
@@ -183,79 +183,13 @@ Figure&nbsp;4: DAG Model Explaining Surgical Outcomes
 </div>
 <p>Unfortunately, we can’t observe what didn’t happen. The patients we already observed went to the surgeon they chose (or who was available), and we’ll never know their outcomes under the alternative assignment. This is the fundamental problem of causal inference: we only see one world, not the parallel universe where everything else was held constant but the treatment differed.</p>
 <p>Since we cannot rerun history with randomization, we run an experiment to collect the data we need. So, we randomly assigned a sequence of 100 patients to either Dr.&nbsp;Dreamy or Dr.&nbsp;Duck and observed the following data:</p>
-<div id="cell-load-data-randomized-python" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>Number of randomized patients: 100</code></pre>
-</div>
-<div id="load-data-randomized-python" class="cell-output cell-output-display" data-execution_count="12">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">patient</th>
-<th data-quarto-table-cell-role="th">severity</th>
-<th data-quarto-table-cell-role="th">doctor_id</th>
-<th data-quarto-table-cell-role="th">doctor_name</th>
-<th data-quarto-table-cell-role="th">post_surgical_score</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>1</td>
-<td>-0.668129</td>
-<td>1</td>
-<td>Doc Dreamy</td>
-<td>3.729393</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>2</td>
-<td>-0.498210</td>
-<td>1</td>
-<td>Doc Dreamy</td>
-<td>1.396668</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>3</td>
-<td>0.618576</td>
-<td>1</td>
-<td>Doc Dreamy</td>
-<td>3.677471</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>4</td>
-<td>0.568692</td>
-<td>1</td>
-<td>Doc Dreamy</td>
-<td>5.227316</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>5</td>
-<td>1.350509</td>
-<td>0</td>
-<td>Doc Duck</td>
-<td>3.244445</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
 <p><a href="#fig-plot-outcomes-randomized" class="quarto-xref">Figure&nbsp;5</a> shows the post-surgical symptom score for 100 patients under randomized assignment. Doc Duck’s average post-surgical symptom score is 2.71 while Doc Dreamy’s average is 3.46. Doc Duck performs better since lower scores indicate better outcomes. With randomization breaking the confounding relationship, we can now properly assess the causal effect. A two-sample t-test reveals a statistically significant difference (t = 2.734, p = 0.007). <strong>Not only is Dr.&nbsp;Dreamy not the better surgeon, he is actually the worse surgeon!</strong></p>
 <div id="cell-fig-plot-outcomes-randomized" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div id="fig-plot-outcomes-randomized" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-outcomes-randomized-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-plot-outcomes-randomized-output-1.png" width="1143" height="661" class="figure-img">
+<img src="index_files/figure-html/fig-plot-outcomes-randomized-output-1.png" width="951" height="469" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-outcomes-randomized-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Post-Surgical Symptom Score (lower is better) for randomized patients.
@@ -274,7 +208,7 @@ Figure&nbsp;5: Post-Surgical Symptom Score (lower is better) for randomized pati
 <div id="fig-plot-outcomes-severity" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-outcomes-severity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-plot-outcomes-severity-output-1.png" width="1143" height="661" class="figure-img">
+<img src="index_files/figure-html/fig-plot-outcomes-severity-output-1.png" width="951" height="469" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-outcomes-severity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Post-Surgical Symptom Score (lower is better) by Patient and Severity
