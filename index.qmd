@@ -9,9 +9,6 @@ execute:
   eval: true
 ---
 
-:::: {.callout-important}
-## 📋 The Challenge: Recover the Lost Figures!
-
 ## Observational Data: A Misleading Victory for Doc Dreamy
 
 ```{python}
@@ -100,9 +97,6 @@ head(patients_df)
 
 ### Challenge Task 1: Recover Figure 1 — Post-Surgical Outcomes by Patient
 
-::: {.panel-tabset}
-## Python
-
 ```{python}
 #| label: fig-plot-outcomes
 #| fig-cap: "Post-Surgical Symptom Score (lower is better) - Observed Data"
@@ -168,28 +162,6 @@ ax.text(0.98, 0.98, mean_text, transform=ax.transAxes,
 plt.tight_layout()
 plt.show()
 ```
-
-## R
-
-```{r}
-#| label: fig-plot-outcomes-r
-#| fig-cap: "Post-Surgical Symptom Score (lower is better) - Observed Data"
-#| echo: false
-
-# TODO: Recover Figure 1 - Post-surgical outcomes by patient
-# Load data (already loaded above)
-# Create scatter plot with ggplot2 or base R
-# Include:
-#   - Different shapes for each doctor
-#   - Colorblind-friendly colors
-#   - Mean lines and annotations
-#   - Professional styling
-
-# Hint: Use ggplot2 for professional plots
-# Colors: Doc Dreamy = '#4E79A7' (blue), Doc Duck = '#E15759' (coral/red-orange)
-
-```
-:::
 
 ## The Hidden Confounder: Patient Severity Explains It All
 

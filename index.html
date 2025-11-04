@@ -129,16 +129,6 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>📋 The Challenge: Recover the Lost Figures!
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <section id="observational-data-a-misleading-victory-for-doc-dreamy" class="level2">
 <h2 class="anchored" data-anchor-id="observational-data-a-misleading-victory-for-doc-dreamy">Observational Data: A Misleading Victory for Doc Dreamy</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -179,10 +169,6 @@ window.Quarto = {
 </div>
 <section id="challenge-task-1-recover-figure-1-post-surgical-outcomes-by-patient" class="level3">
 <h3 class="anchored" data-anchor-id="challenge-task-1-recover-figure-1-post-surgical-outcomes-by-patient">Challenge Task 1: Recover Figure 1 — Post-Surgical Outcomes by Patient</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>(-2.0, 102.0)</code></pre>
@@ -197,12 +183,6 @@ window.Quarto = {
 Figure&nbsp;1: Post-Surgical Symptom Score (lower is better) - Observed Data
 </figcaption>
 </figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-
 </div>
 </div>
 </div>
@@ -282,9 +262,9 @@ Figure&nbsp;4: DAG Model Explaining Surgical Outcomes
 <p>Unfortunately, we can’t observe what didn’t happen. The patients we already observed went to the surgeon they chose (or who was available), and we’ll never know their outcomes under the alternative assignment. This is the fundamental problem of causal inference: we only see one world, not the parallel universe where everything else was held constant but the treatment differed.</p>
 <p>Since we cannot rerun history with randomization, we run an experiment to collect the data we need. So, we randomly assigned a sequence of 100 patients to either Dr.&nbsp;Dreamy or Dr.&nbsp;Duck and observed the following data:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">R</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">R</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -307,7 +287,7 @@ Figure&nbsp;4: DAG Model Explaining Surgical Outcomes
 </div>
 </div>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the randomized data</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>patients_randomized_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'patients_data_randomized.csv'</span>)</span>
@@ -343,9 +323,9 @@ Figure&nbsp;4: DAG Model Explaining Surgical Outcomes
 <li>Professional styling consistent with Figure 1</li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">R</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">R</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>(-2.0, 102.0)</code></pre>
@@ -364,7 +344,7 @@ Figure&nbsp;5: Post-Surgical Symptom Score (lower is better) for randomized pati
 </div>
 </div>
 </div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Recover Figure 2 - Randomized assignment outcomes</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load randomized data (already loaded above)</span></span>
@@ -393,9 +373,9 @@ Figure&nbsp;5: Post-Surgical Symptom Score (lower is better) for randomized pati
 <li>This figure should reveal the confounding by showing how severity affects both surgeon assignment and outcomes</li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">R</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">R</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Recover Figure 3 - Outcomes by patient severity (stratification)</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load observational data (already loaded above)</span></span>
@@ -410,7 +390,7 @@ Figure&nbsp;5: Post-Surgical Symptom Score (lower is better) for randomized pati
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Hint: Use axvspan(-1, 1, alpha=0.15, color='gray', zorder=0) for the overlay</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Recover Figure 3 - Outcomes by patient severity (stratification)</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load observational data (already loaded above)</span></span>
@@ -480,8 +460,6 @@ Figure&nbsp;5: Post-Surgical Symptom Score (lower is better) for randomized pati
 <li>Set random seeds if you’re doing any additional analysis for reproducibility</li>
 </ul>
 </section>
-</div>
-</div>
 
 </main>
 <!-- /main column -->
