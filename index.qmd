@@ -295,9 +295,6 @@ head(patients_randomized_df)
 - Same colorblind-friendly color scheme
 - Professional styling consistent with Figure 1
 
-::: {.panel-tabset}
-## Python
-
 ```{python}
 #| label: fig-plot-outcomes-randomized
 #| fig-cap: "Post-Surgical Symptom Score (lower is better) for randomized patients."
@@ -364,21 +361,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-## R
-
-```{r}
-#| label: fig-plot-outcomes-randomized-r
-#| fig-cap: "Post-Surgical Symptom Score (lower is better) for randomized patients."
-#| echo: true
-
-# TODO: Recover Figure 2 - Randomized assignment outcomes
-# Load randomized data (already loaded above)
-# Create scatter plot similar to Figure 1
-# Use same styling and color scheme
-
-```
-:::
-
 ## Solution 2: Stratification — When You Can't Randomize
 
 The key to handling a common cause confounder is to stratify by the common cause. In general, this means we examine the relationship between treatment and outcome within groups that share the same value of the confounder. In our example, this means we look at patients of similar severity and compare the outcomes of the surgeons for patients of similar severity. There are mathematically sophisticated ways to do this, but here we demonstrate it visually. Since patient number lacks inherent meaning, the following figure shows patient severity on the x-axis and post-surgical symptom score on the y-axis.  
@@ -396,47 +378,71 @@ The key to handling a common cause confounder is to stratify by the common cause
 - Title: "Post-Surgical Symptom Score by Patient Severity"
 - This figure should reveal the confounding by showing how severity affects both surgeon assignment and outcomes
 
-::: {.panel-tabset}
-## Python
-
 ```{python}
 #| label: fig-plot-outcomes-severity
 #| fig-cap: "Post-Surgical Symptom Score (lower is better) by Patient and Severity"
-#| echo: true
+#| echo: false
 
-# TODO: Recover Figure 3 - Outcomes by patient severity (stratification)
-# Load observational data (already loaded above)
-# Create scatter plot with:
-#   - X-axis: Initial Patient Severity
-#   - Y-axis: Post-Surgical Symptom Score
-#   - Same color/marker scheme as previous figures
-#   - Mean lines and annotations
-#   - Shaded region from -1 to 1 on x-axis (use ax.axvspan or similar)
-#   - Professional styling
+import matplotlib.pyplot as plt
+import numpy as np
 
-# Hint: Use axvspan(-1, 1, alpha=0.15, color='gray', zorder=0) for the overlay
+# Calculate means for each doctor using observational data
+dreamy_mean = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']['post_surgical_score'].mean()
+duck_mean = patients_df[patients_df['doctor_name'] == 'Doc Duck']['post_surgical_score'].mean()
 
+# Create figure with professional styling
+fig, ax = plt.subplots(figsize=(12, 7))
+
+# Separate data by doctor
+dreamy_data = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']
+duck_data = patients_df[patients_df['doctor_name'] == 'Doc Duck']
+
+# Add shaded region highlighting severity between -1 and 1 (stratification region)
+ax.axvspan(-1, 1, alpha=0.15, color='gray', zorder=0, label='Stratification Region')
+
+# Plot scatter points
+# Doc Dreamy: circles, blue
+ax.scatter(dreamy_data['severity'], dreamy_data['post_surgical_score'], 
+           marker='o', color='#4E79A7', s=60, alpha=0.7, 
+           label='Doc Dreamy', zorder=3)
+
+# Doc Duck: triangles, coral/red-orange
+ax.scatter(duck_data['severity'], duck_data['post_surgical_score'], 
+           marker='^', color='#E15759', s=60, alpha=0.7, 
+           label='Doc Duck', zorder=3)
+
+# Add horizontal dashed lines for means
+ax.axhline(y=dreamy_mean, color='#4E79A7', linestyle='--', linewidth=2, 
+           alpha=0.8, zorder=2)
+ax.axhline(y=duck_mean, color='#E15759', linestyle='--', linewidth=2, 
+           alpha=0.8, zorder=2)
+
+# Professional styling
+ax.set_xlabel('Initial Patient Severity', fontsize=12, fontweight='bold')
+ax.set_ylabel('Post-Surgical Symptom Score (Lower is Better)', 
+              fontsize=12, fontweight='bold')
+ax.set_title('Post-Surgical Symptom Score by Patient Severity', 
+             fontsize=14, fontweight='bold', pad=15)
+
+# Add grid
+ax.grid(True, alpha=0.3, linestyle='-', linewidth=0.5)
+ax.set_axisbelow(True)
+
+# Add legend (positioned to avoid overlap with mean box)
+ax.legend(loc='upper left', fontsize=11, framealpha=0.9)
+
+# Create a text box on the side with mean values
+mean_text = f'Mean Values:\n○ Doc Dreamy: {dreamy_mean:.2f}\n△ Doc Duck: {duck_mean:.2f}'
+ax.text(0.98, 0.98, mean_text, transform=ax.transAxes,
+        fontsize=11, fontweight='bold',
+        verticalalignment='top', horizontalalignment='right',
+        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8, edgecolor='black', linewidth=1.5),
+        zorder=5)
+
+# Adjust layout
+plt.tight_layout()
+plt.show()
 ```
-
-## R
-
-```{r}
-#| label: fig-plot-outcomes-severity-r
-#| fig-cap: "Post-Surgical Symptom Score (lower is better) by Patient and Severity"
-#| echo: true
-
-# TODO: Recover Figure 3 - Outcomes by patient severity (stratification)
-# Load observational data (already loaded above)
-# Create scatter plot with:
-#   - X-axis: Initial Patient Severity
-#   - Y-axis: Post-Surgical Symptom Score
-#   - Same color/marker scheme as previous figures
-#   - Mean lines and annotations
-#   - Shaded region from -1 to 1 on x-axis
-#   - Professional styling
-
-```
-:::
 
 Looking at @fig-plot-outcomes-severity, the value of stratifying by severity is visually most obvious with initial patient severity scores between -1 and 1 (highlighted in the overlay). We chose this region because it shows substantial overlap between the two surgeons—both surgeons have considerable data within this range, making it an ideal region for comparing their performance. Outside of this range, there is less data available for making direct comparisons: Doc Duck sees more of the higher-severity patients (severity > 1), while Doc Dreamy sees more of the lower-severity patients (severity < -1).
 
