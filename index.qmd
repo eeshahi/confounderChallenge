@@ -206,7 +206,7 @@ Since we cannot rerun history with randomization, we run an experiment to collec
 
 ```{python}
 #| label: simulate-data-randomized
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 #| include: false
@@ -257,7 +257,7 @@ patients_randomized_df.head()
 
 ```{python}
 #| label: load-data-randomized-python
-#| echo: true
+#| echo: false
 
 import pandas as pd
 
@@ -273,7 +273,7 @@ patients_randomized_df.head()
 
 ```{r}
 #| label: load-data-randomized-r
-#| echo: true
+#| echo: false
 
 # Load the randomized data
 patients_randomized_df <- read.csv('patients_data_randomized.csv')
