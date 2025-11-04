@@ -252,7 +252,7 @@ dreamy_mean = patients_randomized_df[patients_randomized_df['doctor_name'] == 'D
 duck_mean = patients_randomized_df[patients_randomized_df['doctor_name'] == 'Doc Duck']['post_surgical_score'].mean()
 
 # Create figure with professional styling
-fig, ax = plt.subplots(figsize=(8, 4))
+fig, ax = plt.subplots(figsize=(6, 5))
 
 # Separate data by doctor
 dreamy_data = patients_randomized_df[patients_randomized_df['doctor_name'] == 'Doc Dreamy']
@@ -322,7 +322,7 @@ dreamy_mean = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']['post_surg
 duck_mean = patients_df[patients_df['doctor_name'] == 'Doc Duck']['post_surgical_score'].mean()
 
 # Create figure with professional styling
-fig, ax = plt.subplots(figsize=(8, 4))
+fig, ax = plt.subplots(figsize=(6, 5))
 
 # Separate data by doctor
 dreamy_data = patients_df[patients_df['doctor_name'] == 'Doc Dreamy']
