@@ -8,8 +8,6 @@ execute:
   eval: true
 ---
 
-## Observational Data: A Misleading Victory for Doc Dreamy
-
 ```{python}
 #| label: simulate-data
 #| echo: false
@@ -65,15 +63,12 @@ patients_df.head()
 ```{python}
 #| label: load-data-python
 #| echo: false
+#| output: false
 
 import pandas as pd
 
 # Load the observational data
 patients_df = pd.read_csv('patients_data.csv')
-
-# Display first few rows to understand the structure
-print(f"Number of patients: {len(patients_df)}")
-patients_df.head()
 ```
 
 ```{python}

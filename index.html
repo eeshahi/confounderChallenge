@@ -96,74 +96,6 @@ window.Quarto = {
 </header>
 
 
-<section id="observational-data-a-misleading-victory-for-doc-dreamy" class="level2">
-<h2 class="anchored" data-anchor-id="observational-data-a-misleading-victory-for-doc-dreamy">Observational Data: A Misleading Victory for Doc Dreamy</h2>
-<div id="cell-load-data-python" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>Number of patients: 100</code></pre>
-</div>
-<div id="load-data-python" class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">patient</th>
-<th data-quarto-table-cell-role="th">severity</th>
-<th data-quarto-table-cell-role="th">doctor_id</th>
-<th data-quarto-table-cell-role="th">doctor_name</th>
-<th data-quarto-table-cell-role="th">post_surgical_score</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>1</td>
-<td>-1.085631</td>
-<td>1</td>
-<td>Doc Dreamy</td>
-<td>2.669278</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>2</td>
-<td>0.997345</td>
-<td>0</td>
-<td>Doc Duck</td>
-<td>6.054400</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>3</td>
-<td>0.282978</td>
-<td>0</td>
-<td>Doc Duck</td>
-<td>3.331899</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>4</td>
-<td>-1.506295</td>
-<td>1</td>
-<td>Doc Dreamy</td>
-<td>0.640369</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>5</td>
-<td>-0.578600</td>
-<td>0</td>
-<td>Doc Duck</td>
-<td>2.276224</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
 <div id="cell-fig-plot-outcomes" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div id="fig-plot-outcomes" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -178,7 +110,6 @@ Figure&nbsp;1: Post-Surgical Symptom Score (lower is better) - Observed Data
 </div>
 </div>
 </div>
-</section>
 <section id="the-hidden-confounder-patient-severity-explains-it-all" class="level2">
 <h2 class="anchored" data-anchor-id="the-hidden-confounder-patient-severity-explains-it-all">The Hidden Confounder: Patient Severity Explains It All</h2>
 <p>As readers of <a href="#fig-plot-outcomes" class="quarto-xref">Figure&nbsp;1</a>, the easiest path for our brains is to accept the mental model of surgical outcomes depicted in <a href="#fig-example-node" class="quarto-xref">Figure&nbsp;2</a>.</p>
@@ -256,7 +187,7 @@ Figure&nbsp;4: DAG Model Explaining Surgical Outcomes
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of randomized patients: 100</code></pre>
 </div>
-<div id="load-data-randomized-python" class="cell-output cell-output-display" data-execution_count="5">
+<div id="load-data-randomized-python" class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
